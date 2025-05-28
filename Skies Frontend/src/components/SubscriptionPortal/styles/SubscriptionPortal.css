@@ -1,0 +1,415 @@
+/* General Reset */
+
+
+/* Body & Root Setup */
+.weather-container1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #11354d url('https://www.transparenttextures.com/patterns/rain.png');
+
+  background-repeat: repeat;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.weather-container1 {
+  border: 4px solid rgba(30, 144, 255, 0.2); /* Dodger Blue border */
+  border-radius: 16px;
+  padding: 24px;
+  
+  box-shadow: 0 8px 16px rgba(30, 144, 255, 0.2);
+  max-width: 800px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.weather-background1.bg-day {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background:  #11354d;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.weather-content1{
+  position: relative;
+  z-index: 1;
+}
+
+.location-header1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.location-name1{
+  font-size: 32px;
+  font-weight: bold;
+  color: #e9eef1;
+  margin: 0;
+}
+
+.local-time1 {
+  font-size: 18px;
+  color: #f7f4f4;
+  margin-top: 8px;
+}
+
+/* Container */
+.weather-content1 {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 2rem;
+  background:  #11354d;
+}
+
+/* Subscription Grid */
+.subscription-options {
+  animation: slide-up 0.7s ease-out;
+  width: 100%;
+}
+
+.subscription-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+@media (min-width: 640px) {
+  .subscription-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .subscription-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Plan Card */
+.plan-card {
+  position: relative;
+  padding: 2rem;
+  background: rgba(194, 206, 236, 0.4);
+  backdrop-filter: blur(8px);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.plan-card.featured {
+  background: rgba(59, 76, 111, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.plan-card.featured:hover {
+  transform: translateY(-5px) scale(1.05);
+}
+
+.featured-tag {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: rgb(155, 162, 241);
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Plan Content */
+.plan-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.plan-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.plan-price {
+  font-size: 2.25rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #fff, #c9e4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.plan-price span {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.7;
+  -webkit-text-fill-color: white;
+}
+
+.plan-features {
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.plan-features p {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.plan-button {
+  width: 100%;
+  background: linear-gradient(135deg, #1a2a6c, #2a4b8c, #1c2c5c);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.plan-button:hover {
+  background: rgba(75, 115, 235, 0.9);
+  transform: translateY(-2px);
+}
+
+/* Back Button */
+.back-button {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 20;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-2px);
+}
+
+/* Subscription Form */
+.subscription-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(185, 202, 237, 0.4);
+  backdrop-filter: blur(8px);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: slide-up 0.5s ease-out;
+}
+
+.subscription-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.subscription-form h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.form-row {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: rgba(255, 255, 255, 0.4);
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Credit Card Row */
+.credit-card-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  background: linear-gradient(90deg, #4286f4, #373B44);
+  color: white;
+  border: none;
+  padding: 0.85rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.submit-button:hover {
+  background: linear-gradient(90deg, #4d90fe, #4154af);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Success Message */
+.success-message {
+  text-align: center;
+  animation: fade-in 0.5s ease-out;
+}
+
+.success-icon {
+  font-size: 3rem;
+  color: #4CAF50;
+  margin-bottom: 1rem;
+}
+
+.success-title {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.success-text {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+/* Extra Visual Enhancements */
+.plan-badge {
+  display: inline-block;
+  background: rgba(65, 105, 225, 0.3);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.plan-features-list {
+  background: rgba(25, 35, 60, 0.4);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.plan-features-list h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feature-icon {
+  color: #4286f4;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
